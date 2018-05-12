@@ -1,0 +1,32 @@
+// PeBinaryInfoShellExt.idl : IDL source for PeBinaryInfoShellExt
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (PeBinaryInfoShellExt.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(05BF8D28-9C05-40A6-AF49-CA68436F329D),
+	pointer_default(unique)
+]
+interface IPeBinaryInfoShellExt : IUnknown{
+};
+[
+	uuid(FD0774C5-6BFF-4325-BE61-37F88320AE5F),
+	version(1.0),
+]
+library PeBinaryInfoShellExtLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(461AECBF-26CA-41FF-805E-201C1655963B)		
+	]
+	coclass PeBinaryInfoShellExt
+	{
+		[default] interface IPeBinaryInfoShellExt;
+	};
+};
+

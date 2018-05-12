@@ -1,0 +1,1 @@
+regsvr32.exe /u "%~dp0\PeBinaryInfoShellExt.dll"

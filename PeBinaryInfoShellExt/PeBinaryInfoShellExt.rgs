@@ -1,0 +1,36 @@
+HKCR
+{
+	NoRemove *
+	{
+		NoRemove shellex
+		{
+			NoRemove PropertySheetHandlers
+			{
+				ForceRemove {461AECBF-26CA-41FF-805E-201C1655963B}
+			}
+		}
+	}
+
+	vkrzv.PeBinaryInfoShellExt.1 = s 'PeBinaryInfoShellExt Class'
+	{
+		CLSID = s '{461AECBF-26CA-41FF-805E-201C1655963B}'
+	}
+	vkrzv.PeBinaryInfoShellExt = s 'PeBinaryInfoShellExt Class'
+	{		
+		CurVer = s 'vkrzv.PeBinaryInfoShellExt.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {461AECBF-26CA-41FF-805E-201C1655963B} = s 'PeBinaryInfoShellExt Class'
+		{
+			ProgID = s 'vkrzv.PeBinaryInfoShellExt.1'
+			VersionIndependentProgID = s 'vkrzv.PeBinaryInfoShellExt'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{FD0774C5-6BFF-4325-BE61-37F88320AE5F}'
+			Version = s '1.0'
+		}
+	}
+}
