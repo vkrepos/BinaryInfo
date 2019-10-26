@@ -453,17 +453,39 @@ namespace peinfo
 		}
 	}
 
+	// https://dev.to/yumetodo/list-of-mscver-and-mscfullver-8nd
 	std::wstring PeFileFormattedInfoExtractor::GetToolset()
 	{
 		WORD linkerVersion = peFileInfoExtractor_.GetLinkerVersion();
 		std::wstring toolsetName = L"(Unknown)";
 		switch (linkerVersion)
 		{
-		case 0x0E0A:
-		case 0x0E0B:
-		case 0x0E0C:
+		case 0x0E15:
+			toolsetName = L"Visual Studio 2019 (16.1.2-16.3.2)";
+			break;
+		case 0x0E14:
+			toolsetName = L"Visual Studio 2019 (16.0.0)";
+			break;
+		case 0x0E10:
+			toolsetName = L"Visual Studio 2017 (15.9.0-15.9.11)";
+			break;
+		case 0x0E0F:
+			toolsetName = L"Visual Studio 2017 (15.8.0)";
+			break;
+		case 0x0E0E:
+			toolsetName = L"Visual Studio 2017 (15.7.1-15.7.5)";
+			break;
 		case 0x0E0D:
-			toolsetName = L"Visual Studio 2017";
+			toolsetName = L"Visual Studio 2017 (15.6.0-15.6.7)";
+			break;
+		case 0x0E0C:
+			toolsetName = L"Visual Studio 2017 (15.5.2-15.5.7)";
+			break;
+		case 0x0E0B:
+			toolsetName = L"Visual Studio 2017 (15.3.3-15.4.5)";
+			break;
+		case 0x0E0A:
+			toolsetName = L"Visual Studio 2017 (15.0-15.2)";
 			break;
 		case 0x0E00:
 			toolsetName = L"Visual Studio 2015";
@@ -491,6 +513,9 @@ namespace peinfo
 			break;
 		case 0x0600:
 			toolsetName = L"Visual Studio 6.0";
+			break;
+		case 0x0500:
+			toolsetName = L"Visual Studio 5.0";
 			break;
 		case 0x3000:
 			toolsetName = L"Visual Studio C#";
